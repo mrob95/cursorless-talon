@@ -253,7 +253,7 @@ ctx.lists["self.cursorless_sub_component_type"] = {
 
 @mod.capture(
     rule=(
-        "<user.ordinals> [through <user.ordinals>] {user.cursorless_sub_component_type}"
+        "<number> [through <number>] {user.cursorless_sub_component_type}"
     )
 )
 def cursorless_indexer(m) -> str:
@@ -263,8 +263,8 @@ def cursorless_indexer(m) -> str:
             "transformation": {
                 "type": "subpiece",
                 "pieceType": m.cursorless_sub_component_type,
-                "startIndex": m.ordinals_list[0],
-                "endIndex": m.ordinals_list[-1] + 1,
+                "startIndex": m.number_list[0],
+                "endIndex": m.number_list[-1] + 1,
             }
         }
     )

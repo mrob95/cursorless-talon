@@ -36,7 +36,7 @@ class Actions:
         arg2: Any = NotSet,
         arg3: Any = NotSet,
     ):
-        """Execute single-target cursorlses command"""
+        """Execute multiple-target cursorlses command"""
         args = list(filter(lambda x: x is not NotSet, [arg1, arg2, arg3]))
         actions.user.vscode_and_wait(
             "cursorless.command",
